@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="Y:\Documents\SmartGit\e-puck2-tps\TP2_move\src"/>
+		<item value="Y:\Documents\SmartGit\blackmagic"/>
+		<item value="Y:\Documents\SmartGit\blackmagic_test"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="465" key="DIALOG_HEIGHT"/>
+		<item value="1420" key="DIALOG_X_ORIGIN"/>
+		<item value="365" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+</section>

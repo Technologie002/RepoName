@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#include "ch.h"
+#include "hal.h"
+#include "memory_protection.h"
+#include <main.h>
+/*#include "leds.h"//灯光秀头文件
+#include "spi_comm.h"*/
+#include "motors.h"
+
+int main(void)
+{
+
+    halInit();
+    chSysInit();
+    mpu_init();
+    motors_init();
+
+   /*clear_leds();//灯光秀前提条件
+   spi_comm_start();*/
+    /* Infinite loop. */
+    while (1) {
+    	left_motor_set_speed(5);
+    	right_motor_set_speed(-5);
+    	set_body_led(2);
+    	int n=get_selector();
+    	if (n==4)
+		{
+    		left_motor_set_speed(-left_motor_get_desired_speed());
+		    right_motor_set_speed(-right_motor_get_desired_speed());
+		}
+    	chThdSleepMilliseconds(500);
+
+
+    	//waits 1 second
+    	/*set_body_led(1); //灯光环绕
+    	chThdSleepMilliseconds(2000);
+
+        set_body_led(0);
+        set_led(LED1, 1);
+        chThdSleepMilliseconds(2000);
+        set_led(LED1, 0);
+        set_led(LED3, 1);
+        chThdSleepMilliseconds(2000);
+        set_led(LED3, 0);
+        set_led(LED5, 1);
+        chThdSleepMilliseconds(2000);
+        set_led(LED5, 0);
+        set_led(LED7, 1);
+        chThdSleepMilliseconds(2000);
+        set_led(LED7, 0);*/
+
+
+    }
+}
+
+#define STACK_CHK_GUARD 0xe2dee396
+uintptr_t __stack_chk_guard = STACK_CHK_GUARD;
+
+void __stack_chk_fail(void)
+{
+    chSysHalt("Stack smashing detected");
+}
